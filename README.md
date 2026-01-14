@@ -49,7 +49,7 @@ A premium, full-stack Todo Management Application designed for efficiency and mo
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd spatial-hawking
+   cd TodoList
    ```
 
 2. **Setup Backend**
