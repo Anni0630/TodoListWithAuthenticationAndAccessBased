@@ -1,82 +1,149 @@
-Todo Management
+# 📝 TodoList Management System
 
-A premium, full-stack Todo Management Application designed for efficiency and modern aesthetics. Built with a high-end **Glassmorphism** design system, robust authentication, and role-based access control.
+A modern, secure, and visually premium Todo Management application built with **React + Vite** on the frontend and **NestJS** on the backend.
 
-![Premium UI Design](https://img.shields.io/badge/Design-Glassmorphism-blueviolet?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/Stack-Fullstack_JS-indigo?style=for-the-badge)
+---
 
-## Core Features
-
-###  Stunning Visuals
-- **Premium UI Overhaul**: Complete glassmorphism-based design with vibrant gradients and smooth micro-animations.
-- **Modern Typography**: Powered by **Inter** for exceptional readability.
-- **Dynamic Interactions**: Polished buttons, input fields, and hover states.
-
-### Secure Architecture
-- **JWT Authentication**: Secure login and signup flow.
-- **Role-Based Access Control (RBAC)**: Distinct permissions for `USER` and `ADMIN` roles.
-- **Soft Delete**: User accounts can be deactivated without immediate data loss.
-
-### Functionality
-- **Todo CRUD**: Full Create, Read, Update, and Delete operations for tasks.
-- **Pagination**: Efficiently manage large task lists with built-in pagination.
-- **Admin Dashboard**: Comprehensive control center for managing users, roles, and status with **inline editing**.
-- **User Profiles**: Manage personal information and security settings.
-
-## Technology Stack
+## 🚀 Tech Stack
 
 ### Frontend
-- **React**: Modern component-based architecture.
-- **Tailwind CSS**: Custom utility-based styling with glassmorphism tokens.
-- **Lucide React**: Beautiful, consistent iconography.
-- **TanStack Query (v5)**: Powerful server-state management and caching.
-- **React Router**: Seamless client-side navigation.
+
+* React
+* Vite
+* TanStack Query
+* Tailwind CSS (Glassmorphism UI)
 
 ### Backend
-- **NestJS**: Scalable and maintainable Node.js framework.
-- **TypeORM**: Robust database interaction layer.
-- **Bcrypt**: Industrial-strength password hashing.
-- **Passport.js**: Standardized authentication strategies.
 
-## Getting Started
+* NestJS
+* TypeORM
+* Passport.js + JWT
+* Bcrypt for password hashing
 
-### Prerequisites
-- Node.js (v18+)
-- SQLite (default) or any compatible database
+### Database
 
-### Installation
+* SQLite (default)
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd TodoList
-   ```
+---
 
-2. **Setup Backend**
-   ```bash
-   cd backend
-   npm install
-   npm run start:dev
-   ```
+## 📁 Project Structure
 
-3. **Setup Frontend**
-   ```bash
-   cd ../frontend
-   npm install
-   npm run dev
-   ```
-
-##  Project Structure
-
-```mermaid
-graph TD
-    A[Root] --> B[backend]
-    A --> C[frontend]
-    B --> B1[src/auth]
-    B --> B2[src/users]
-    B --> B3[src/todos]
-    C --> C1[src/pages]
-    C --> C2[src/components]
-    C --> C3[src/context]
+```
+root/
+ ├── frontend/   # React + Vite client
+ ├── backend/    # NestJS API server
 ```
 
+---
+
+## ⚙️ Prerequisites
+
+* Node.js (v18+ recommended)
+* npm or yarn
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+npm run start:dev
+```
+
+Backend will start at:
+
+```
+http://localhost:3000
+```
+
+---
+
+### 2️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+
+Start frontend:
+
+```bash
+npm run dev
+```
+
+Frontend will run at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔧 Important Configuration Note
+
+❗ **Frontend and Backend run on different ports.**
+
+| Service  | URL                                            |
+| -------- | ---------------------------------------------- |
+| Frontend | [http://localhost:5173](http://localhost:5173) |
+| Backend  | [http://localhost:3000](http://localhost:3000) |
+
+All API requests must point to the **backend URL**.
+
+If the API base URL is not configured properly, requests may incorrectly hit the client URL (localhost:5173), causing the project to fail during execution.
+
+---
+
+## 🔐 Authentication
+
+* JWT-based authentication
+* Token stored securely on client
+* Protected routes enforced via guards
+
+---
+
+## 📡 API Overview
+
+### Auth
+
+* POST `/auth/signup`
+* POST `/auth/login`
+
+### Todos
+
+* GET `/todos`
+* POST `/todos`
+* PATCH `/todos/:id`
+* DELETE `/todos/:id`
+
+### Users
+
+* GET `/users/profile`
+* PATCH `/users/profile`
+* DELETE `/users/profile`
+
+---
+
+## 🎨 UI Highlights
+
+* Glassmorphism design
+* Smooth animations
+* Responsive layout
+* Avatar-based personalization
+
+---
+
+## 📦 Deployment
+
+* Easily containerizable
+* Ready for cloud deployment
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates a clean full-stack architecture, secure authentication, and modern UI/UX practices suitable for real-world production systems.
