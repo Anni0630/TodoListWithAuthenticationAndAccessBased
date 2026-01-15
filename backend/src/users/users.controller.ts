@@ -41,7 +41,7 @@ export class UsersController {
             },
         }),
     }))
-    async uploadAvatar(@Request() req, @UploadedFile() file: Express.Multer.File) {
+    async uploadAvatar(@Request() req, @UploadedFile() file: any) {
         const avatarUrl = `/uploads/avatars/${file.filename}`;
         await this.usersService.update(req.user.userId, { avatarUrl });
         return { avatarUrl };

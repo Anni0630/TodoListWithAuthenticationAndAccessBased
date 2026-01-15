@@ -5,7 +5,7 @@ export declare class UsersController {
     getProfile(req: any): Promise<import("./entities/user.entity").User>;
     updateProfile(req: any, updateData: any): Promise<import("./entities/user.entity").User>;
     softDelete(req: any): Promise<void>;
-    uploadAvatar(req: any, file: Express.Multer.File): Promise<{
+    uploadAvatar(req: any, file: any): Promise<{
         avatarUrl: string;
     }>;
     findAll(): Promise<import("./entities/user.entity").User[]>;
